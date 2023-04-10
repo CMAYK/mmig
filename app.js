@@ -6,14 +6,14 @@ var item1 = "";
 var item2 = "";
 var item3 = "";
 var styles = ["SMB", "SMB2", "SMAS", "SML2", "SMB3", "SMA4", "SMW", "YI", "NSMB"];
-var themes = ["Ground", "Underground", "Underwater", "Desert", "Snow", "Sky", "Forest", "Ghost House", "Airship", "Castle"];
+var themes = ["Ground", "Underground", "Underwater", "Desert", "Snow", "Sky", "Forest", "Ghost House", "Space", "Airship", "Castle", "Mountain", "Athletic", "InsideAirship"];
 var common = ["Banzai Bills", "Bloopers", "Bob-ombs", "Boos", "Boom Boom", "Bowser", "Bullet Bills", "Buzzy Beetles", "Chain Chomps", "Cheep Cheeps", "Dry Bones", "Pirahna Plants", "Fish Bones", "Goombas", "Hammer Bros", "Koopa Troopas", "Lakitu", "Lava Bubbles", "Magikoopas", "Monty Moles", "Munchers", "Sledge Bros", "Spike Tops", "Spinies", "Stretches", "Thwomps", "Twisters", "Wiggler", "Precision Platforming"];
 var exclusives_not_tdw = ["Bowser Jr.", "On/Off blocks", "Rocky Wrenches"];
 var exclusives_day_ground = ["Poisonous Mushrooms"];
 var exclusives_day = ["the Angry Sun"];
 var exclusives_night = ["the Moon"];
 var exclusives_tdw = ["Ant Troopers", "Bullies", "Cat Banzai Bills", "Cat Bullet Bills", "Charvaargh", "Fire Bros", "Meowser", "Peepas", "Piranha Creepers", "Pom Pom", "Porcupuffer", "Skipsqueaks", "Stingbies", "Koopa Cars", "clear pipes", "trees"];
-var twists = ["make it vertical", "add a boss battle", "design a puzzle", "use 2 sub-worlds", "make it a speedrun", "use all 16 pixel-art slots", "make it non-linear", "use the 'always run' ability flag", "use the 'no jump' ability flag", "have a true ending", "focus on a powerup"];
+var twists = ["make it vertical", "add a boss battle", "design a puzzle", "use more than 1 sub-stage", "make it a speedrun", "use all 16 pixel-art slots", "make it non-linear", "use the 'always run' ability flag", "use the 'no jump' ability flag", "have a true ending", "focus on a powerup"];
 var twists_movement = ["require spin-jumps"];
 
 function reset() {
