@@ -30,25 +30,11 @@ function reset() {
 function genStyle() {
   reset();
   if(!$('#styleLock').prop('checked')) {
-    style = styles[Math.floor(Math.random() * styles.length)];
-    /* style theme */
-    for (var i = 0; i < exclusives_tdw.length; i++) {
-      if (item1 == exclusives_tdw[i] || item2 == exclusives_tdw[i] || item3 == exclusives_tdw[i]) {
-        style = "3DW";
-        break;
-      }
-    }
-    for (var i = 0; i < exclusives_not_tdw.length; i++) {
-      if (item1 == exclusives_not_tdw[i] || item2 == exclusives_not_tdw[i] || item3 == exclusives_not_tdw[i] || !day) {
-        var styles_without_3DW = ["SMB", "SMB3", "SMW", "NSMB"];
-        style = styles_without_3DW[Math.floor(Math.random() * styles_without_3DW.length)];
-        break;
-      }
-    }
-    if(twist == "require spin-jumps") {
-      var styles_movement = ["SMW", "NSMB", "3DW"];
-      style = styles_movement[Math.floor(Math.random() * styles_movement.length)];
-    }
+    style = styles[Math.floor(Math.random() * styles.length)];    
+  }
+  if(twist == "require spin-jumps") {
+    var styles_movement = ["SMW", "NSMB", "3DW"];
+    style = styles_movement[Math.floor(Math.random() * styles_movement.length)];
   }
 }
 
