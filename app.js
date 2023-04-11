@@ -8,8 +8,7 @@ var item3 = "";
 var styles = ["SMB", "SMB2", "SMAS", "SML2", "SMB3", "SMA4", "SMW", "YI", "NSMB"];
 var themes = ["Ground", "Underground", "Underwater", "Desert", "Snow", "Sky", "Forest", "Ghost House", "Space", "Airship", "Castle", "Mountain", "Athletic", "InsideAirship"];
 var common = ["Banzai Bills", "Bloopers", "Bob-ombs", "Boos", "Boom Boom", "Bowser", "Bullet Bills", "Buzzy Beetles", "Chain Chomps", "Cheep Cheeps", "Dry Bones", "Pirahna Plants", "Fish Bones", "Goombas", "Hammer Bros", "Koopa Troopas", "Lakitu", "Lava Bubbles", "Magikoopas", "Monty Moles", "Munchers", "Sledge Bros", "Goombrats", "Spinies", "Stretches", "Thwomps", "Goombuds", "Wigglers", "Precision Platforming", "Bowser Jr.", "On/Off blocks", "Rocky Wrenches", "Poisonous Mushrooms", "Ice Bros", "Boomerang Bros", "Fire Bros"];
-var twists = ["make it vertical", "add a boss battle", "design a puzzle", "use more than 1 sub-stage", "make it a speedrun", "use all 16 pixel-art slots", "make it non-linear", "use the 'always run' ability flag", "use the 'no jump' ability flag", "have a true ending", "focus on a powerup"];
-var twists_movement = ["require spin-jumps"];
+var twists = ["make it vertical", "add a boss battle", "design a puzzle", "use more than 1 sub-stage", "make it a speedrun", "use all 16 pixel-art slots", "make it non-linear", "use the 'always run' ability flag", "use the 'no jump' ability flag", "have a true ending", "focus on a powerup", "use the 'spin-jump' ability flag"];
 
 function reset() {
   if (!$('#styleLock').prop('checked')) style = null;
@@ -44,35 +43,9 @@ function genAll() {
     theme = themes[Math.floor(Math.random() * themes.length)];
   }
 
-  /* Day/Night */
-  if (!$('#timeLock').prop('checked')) {
-    if (theme != "Ghost House" && Math.floor(Math.random() * 10) < 8) {
-      day = true;
-    }
-    else if (theme == "Ghost House" && Math.floor(Math.random() * 10) < 6) {
-      day = true;
-    }
-    else {
-      day = false;
-    }
-    if (item1 == "Moon" || item2 == "Moon" || item3 == "Moon" || item1 == "Poisonous Mushrooms" || item2 == "Poisonous Mushrooms" || item3 == "Poisonous Mushrooms") {
-      day = false;
-    }
-    if (item1 == "the Angry Sun" || item2 == "the Angry Sun" || item3 == "the Angry Sun") {
-      day = true;
-    }
-    if (style == "3DW") {
-      day = true;
-    }
-  }
   /* Enemies/Gimmicks */
   if (!$('#enemiesLock').prop('checked')) {
     var list = common;
-    if(style == "3DW") list = list.concat(exclusives_tdw);
-    else list = list.concat(exclusives_not_tdw);
-    if(theme == "Ground" && !day) list = list.concat(exclusives_day_ground);
-    if(day && style != "3DW") list = list.concat(exclusives_day);
-    else if(style != "3DW") list = list.concat(exclusives_night);
 
     var chosen = 0;
     var used = [null, null, null];
@@ -102,7 +75,6 @@ function genAll() {
 
   if (!$('#twistLock').prop('checked')) {
     var tempTwists = twists;
-    if (style != "SMB" && style != "SMB3") tempTwists = tempTwists.concat(twists_movement);
     var tempTwist = tempTwists[Math.floor(Math.random() * tempTwists.length)];
     twist = tempTwist;
   }
