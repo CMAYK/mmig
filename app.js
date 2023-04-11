@@ -98,4 +98,4 @@ function update(enemies, twist) {
   else $('#time').html("night");
   if (!$('#enemiesLock').prop('checked')) $('#else').html(enemies);
   if (!$('#twistLock').prop('checked')) $('#twist').html(twist);
-}
+} 
